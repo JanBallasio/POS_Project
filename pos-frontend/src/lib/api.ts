@@ -21,7 +21,8 @@ export const productApi = {
       throw new Error(`Failed to fetch products: ${response.status}`);
     }
 
-    const data: ApiResponse<Product[]> = await response.json();
+    // Accept the backend's response shape
+    const data = await response.json();
     return data.data || [];
   },
 
